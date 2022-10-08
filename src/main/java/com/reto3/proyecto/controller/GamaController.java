@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/Gama")
@@ -25,5 +26,10 @@ public class GamaController {
    public Gama save(@RequestBody Gama gama) {
         return gamaService.save(gama);
    }
+
+    @GetMapping("/{id}")
+    public Optional<Gama> getGama(@PathVariable("id") int id){
+        return gamaService.getGama(id);
+    }
 
 }

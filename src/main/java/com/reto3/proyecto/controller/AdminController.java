@@ -1,12 +1,14 @@
 package com.reto3.proyecto.controller;
 
 import com.reto3.proyecto.model.Admin;
+import com.reto3.proyecto.model.Car;
 import com.reto3.proyecto.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/Admin")
@@ -24,5 +26,9 @@ public class AdminController {
    public Admin save(@RequestBody Admin admin) {
         return adminService.save(admin);
    }
+    @GetMapping("/{id}")
+    public Optional<Admin> getAdmin(@PathVariable("id") int id){
+        return adminService.getAdmin(id);
+    }
 
 }

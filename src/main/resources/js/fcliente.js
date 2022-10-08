@@ -1,7 +1,8 @@
+const Base_url = 'Http://144.24.30.85'
 function traerInformacion(formulario){
     $.ajax({
 
-        url:"https://g27f1bc002fee50-proyectomisiontic.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/client/client",
+        url:Base_url + "/api/Client/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -48,7 +49,7 @@ function guardarInformacion(){
     $.ajax (
         {
 
-            url          : 'https://g27f1bc002fee50-proyectomisiontic.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/client/client',
+            url          :Base_url + "/api/Client/save",
             type         : 'POST',
             data         :  dataToSend,
             datatype     :  "JSON",
@@ -74,7 +75,7 @@ function editarInformacion() {
     $.ajax (
         {
 
-            url          : 'https://g27f1bc002fee50-proyectomisiontic.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/client/client',
+            url          : Base_url + "api/Client/save",
             type         : 'PUT',
             data         :  dataToSend,
             datatype     :  "JSON",
@@ -101,7 +102,7 @@ function borrarElemento(idElemento){
     $.ajax (
         {
 
-            url          : 'https://g27f1bc002fee50-proyectomisiontic.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/client/client',
+            url          :Base_url + "api/Client/delete" ,
             type         : 'DELETE',
             data         :  dataToSend,
             contentType  : 'application/json',
@@ -127,7 +128,7 @@ function consultarId() {
     $.ajax (
         {
 
-            url          : 'https://g27f1bc002fee50-proyectomisiontic.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/client/client' + codigo ,
+            url          : Base_url + "api/Client/{id}",
             type         : 'GET',
             dataType     : 'json',
             success      :  function(respuesta){
